@@ -30,6 +30,10 @@ var ReactPortfolioDemo = React.createClass({
       {
         categoryId: 'cat1',
         text: 'Item3'
+      },
+      {
+        categoryId: 'cat1',
+        text: 'Item4'
       }
     ]
     return (
