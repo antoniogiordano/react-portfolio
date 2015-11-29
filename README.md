@@ -2,6 +2,8 @@
 
 A react ES6 component to create a website portfolio filtrable through a list of categories
 
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
 ### Local Demo
 
 Install webpack global if you don't have it in your system by running this command in a terminal:
