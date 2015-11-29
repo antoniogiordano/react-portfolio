@@ -2,6 +2,9 @@
 
 A react ES6 component to create a website portfolio filtrable through a list of categories
 
+[![Build
+Status](https://travis-ci.org/antoniogiordano/react-portfolio.svg)](https://travis-ci.org/antoniogiordano/react-portfolio)
+
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 ### Local Demo
