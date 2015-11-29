@@ -1,0 +1,143 @@
+.rpt {
+  position: fixed;
+  font-family: "Open sans";
+}
+
+.rpt .rpt-overlay {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  opacity: 0;
+}
+.rpt .rpt-overlay.rpt-active {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: black;
+  opacity: 0.6;
+}
+
+.rpt .rpt-modal {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: rgba(0,0,0,0.5) 0 0 6px;
+  padding: 20px;
+}
+.rpt .rpt-modal.rpt-active {
+  position: fixed;
+  opacity: 1;
+  border-radius: 4px;
+  background: #fff;
+}
+.rpt .rpt-modal.rpt-active p {
+  background: white;
+}
+
+.rpt .rpt-modal button {
+  border: none;
+  background: #d33;
+  padding: 8px 12px;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.rpt .rpt-modal button:hover {
+  background: #d99;
+}
+
+.rpt .rpt-modal button.rpt-skip-button {
+  background: #ccc;
+}
+.rpt .rpt-modal button.rpt-skip-button:hover {
+  background: #666;
+}
+
+.rpt .rpt-arrow {
+  border: 16px solid #fff;
+  content: '';
+  position: absolute;
+  background: transparent;
+}
+.rpt .rpt-arrow.rpt-arrow-top {
+  top: -32px;
+  left: 32px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+.rpt .rpt-arrow.rpt-arrow-left {
+  top: 32px;
+  left: -32px;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.rpt .rpt-arrow.rpt-arrow-right {
+  top: 32px;
+  right: -32px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+.rpt .rpt-arrow.rpt-arrow-bottom {
+  bottom: -32px;
+  left: 32px;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+.rpt .rpt-arrow.rpt-arrow-none {
+  display: none;
+}
+
+.rpt .rpt-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: white;
+}
+
+.rpt .rpt-steps-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: white;
+}
+
+.rpt .rpt-steps-icons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: white;
+}
+
+.rpt .rpt-step-icon {
+  width: 12px;
+  content: '';
+  height: 12px;
+  border-radius: 6px;
+  background: #ccc;
+  margin: 9px 5px;
+  cursor: pointer;
+}
+.rpt .rpt-step-icon:hover {
+  background: #d99;
+}
+
+.rpt .rpt-step-icon.rpt-step-icon-active {
+  background: #dd3333;
+}

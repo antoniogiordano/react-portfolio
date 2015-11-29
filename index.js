@@ -27,12 +27,10 @@ var ReactPortfolio = React.createClass({
   },
   itemStyle (index) {
     var style = {}
-    for (var c in this.props.categories) {
-      if (!(this.state.activeCatId === -1 || this.props.items[index].categories.indexOf(this.state.activeCatId) !== -1)) {
-        style = {
-          width: 0,
-          height: 0
-        }
+    if (!(this.state.activeCatId === -1 || this.props.items[index].categories.indexOf(this.state.activeCatId) !== -1)) {
+      style = {
+        width: 0,
+        height: 0
       }
     }
     return style
