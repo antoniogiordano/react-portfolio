@@ -4,9 +4,14 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import ReactProductTour from 'react-product-tour'
 import ReactPortfolio from './index.js'
 
 var ReactPortfolioDemo = React.createClass({
+  startTutorial () {
+    this.refs['rport'].selectCategory(-1)
+    this.refs['rpt'].startTour()
+  },
   render () {
     var categories = [
       {
@@ -20,25 +25,49 @@ var ReactPortfolioDemo = React.createClass({
     ]
     var items = [
       {
-        categoryId: 'cat1',
-        text: 'Item1'
+        categories: ['cat1'],
+        text: 'Item1',
+        image: 'getapper.png'
       },
       {
-        categoryId: 'cat2',
+        categories: ['cat1', 'cat2'],
         text: 'Item2'
       },
       {
-        categoryId: 'cat1',
+        categories: ['cat1'],
         text: 'Item3'
       },
       {
-        categoryId: 'cat1',
+        categories: ['cat2'],
         text: 'Item4'
+      },
+      {
+        categories: ['cat1'],
+        text: 'Item5'
+      }
+    ]
+    var steps = [
+      {
+        selector: '.rport-categories',
+        message: 'This is the categories list'
+      },
+      {
+        selector: '.rport-category:last',
+        message: 'By clicking on one category you will filter the items shown'
+      },
+      {
+        selector: '.rport-items',
+        message: 'This is the list updated',
+        onChange: () => {
+          this.refs['rport'].selectCategory('cat2')
+        }
       }
     ]
     return (
       <div>
-        <ReactPortfolio categories={categories} items={items} />
+        <button onClick={this.startTutorial}>Tutorial</button>
+        <ReactProductTour ref='rpt' steps={steps} />
+        <ReactPortfolio ref='rport' categories={categories} items={items} />
       </div>
     )
   }

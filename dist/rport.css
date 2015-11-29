@@ -13,6 +13,40 @@
 
 .rport-category {
   margin: 5px;
+  padding: 5px;
   cursor: pointer;
   color: #d33;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+.rport-category:hover {
+  border: 1px solid #d99;
+}
+
+.rport-items {
+  /*display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;*/
+  text-align: center;
+}
+
+.rport-item {
+  display: inline-block;
+  /*max-width: 320px;*/
+  height: 240px;
+  width: 25%;
+  margin: 0 10px 20px 10px;
+  text-align: center;
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+  overflow: hidden;
+}
+
+.rport-item img {
+  width: 100%;
+  height: auto;
 }

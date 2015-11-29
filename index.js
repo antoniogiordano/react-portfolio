@@ -20,15 +20,22 @@ var ReactPortfolio = React.createClass({
       activeCatId: -1
     }
   },
-  showCategory (category) {
+  selectCategory (categoryId) {
     this.setState({
-      activeCatId: category.id
+      activeCatId: categoryId
     })
   },
-  isItemVisible (index) {
-    return (
-      (this.state.activeCatId === -1 || this.props.items[index].categoryId === this.state.activeCatId) ? null : 'none'
-    )
+  itemStyle (index) {
+    var style = {}
+    for (var c in this.props.categories) {
+      if (!(this.state.activeCatId === -1 || this.props.items[index].categories.indexOf(this.state.activeCatId) !== -1)) {
+        style = {
+          width: 0,
+          height: 0
+        }
+      }
+    }
+    return style
   },
   render () {
     return (
@@ -36,7 +43,7 @@ var ReactPortfolio = React.createClass({
         <div className='rport-categories'>
           <span
               className='rport-category'
-              onClick={this.showCategory.bind(this, {id: -1})}
+              onClick={this.selectCategory.bind(this, -1)}
               key='-1' >
             All
           </span>
@@ -45,7 +52,7 @@ var ReactPortfolio = React.createClass({
               return (
                   <span
                     className='rport-category'
-                    onClick={this.showCategory.bind(this, category)}
+                    onClick={this.selectCategory.bind(this, category.id)}
                     key={category.id} >
                     {category.name}
                   </span>
@@ -58,10 +65,13 @@ var ReactPortfolio = React.createClass({
             this.props.items.map((item, index) => {
               return (
                 <div
-                  style={{display: this.isItemVisible(index)}}
+                  style={this.itemStyle(index)}
                   className='rport-item'
                   key={index}>
-                  {item.text}
+                  <img alt='' src={item.image} />
+                  <p>
+                    {item.text}
+                  </p>
                 </div>
               )
             }, this)
