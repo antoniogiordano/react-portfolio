@@ -1,0 +1,18 @@
+.rport-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: 'Open sans';
+}
+
+.rport-categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.rport-category {
+  margin: 5px;
+  cursor: pointer;
+  color: #d33;
+}
